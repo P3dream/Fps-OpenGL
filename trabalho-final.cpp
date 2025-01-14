@@ -48,6 +48,24 @@ void Desenha(void) {
     glEnd();
     glEnable(GL_LIGHTING); // Reativa a iluminação
 
+    // Adiciona paredes azuis nas extremidades
+    glColor3f(0.0f, 0.0f, 1.0f); // Define a cor azul
+    glBegin(GL_QUADS);
+
+    // Parede à esquerda (extremidade negativa do eixo X)
+    glVertex3f(-500.0f, -50.0f, -500.0f);
+    glVertex3f(-500.0f, -50.0f, 500.0f);
+    glVertex3f(-500.0f,  50.0f, 500.0f);
+    glVertex3f(-500.0f,  50.0f, -500.0f);
+
+    // Parede à direita (extremidade positiva do eixo X)
+    glVertex3f(500.0f, -50.0f, -500.0f);
+    glVertex3f(500.0f, -50.0f, 500.0f);
+    glVertex3f(500.0f,  50.0f, 500.0f);
+    glVertex3f(500.0f,  50.0f, -500.0f);
+
+    glEnd();
+
     // Primeiro teapot
     glColor3f(0.0f, 0.0f, 1.0f);
     glEnable(GL_LIGHT2);
@@ -65,6 +83,7 @@ void Desenha(void) {
 
     glutSwapBuffers();
 }
+
 
 
 // Inicializa parâmetros de rendering
